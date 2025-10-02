@@ -2,16 +2,19 @@
 # define PHONEBOOK_HPP
 
 #include "Contact.hpp"
+#include <iostream>
+#include <iomanip>
+#include <limits.h>
 
 class PhoneBook {
     private:
         Contact contact[8];
         int numberOfContact;
-        int nextIndex;
+        int index;
     public:
-        int add(std::string firstName, std::string lastName, std::string nickname,
-            std::string phoneNumber, std::string darkestSecret);
-        int search(void);
+        PhoneBook(void);
+        void add(void);
+        void search(void);
 };
 
 #endif 

@@ -32,7 +32,6 @@ void PhoneBook::add(void)
 	std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
 
 	std::cout << "Add your contact to the phonebook :" << std::endl;
-    clearInputBuffer();
 	std::cout << "First name : ";
 	std::getline(std::cin, firstName);
 	std::cout << "Last name : ";
@@ -43,6 +42,11 @@ void PhoneBook::add(void)
 	std::getline(std::cin, phoneNumber);
 	std::cout << "Your darkest secret : ";
 	std::getline(std::cin, darkestSecret);
+	if (firstName.empty() || lastName.empty() || nickname.empty() || phoneNumber.empty() || darkestSecret.empty())
+	{
+		std::cout << "Error: All fields must be filled!" << std::endl;
+		return;
+	}
 	this->contact[this->index].setFirstName(firstName);
 	this->contact[this->index].setLastName(lastName);
 	this->contact[this->index].setNickname(nickname);
@@ -101,7 +105,7 @@ void PhoneBook::search(void)
         else
         {
             clearInputBuffer();
-            if (indexToSearch >= 0 && indexToSearch < 7 && indexToSearch < this->numberOfContact)
+            if (indexToSearch >= 0 && indexToSearch < 8 && indexToSearch < this->numberOfContact)
                 break;
         }
         while (choice != 1 && choice != 2)

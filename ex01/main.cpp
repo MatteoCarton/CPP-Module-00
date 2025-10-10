@@ -1,4 +1,5 @@
 #include "PhoneBook.hpp"
+#include <limits>
 
 int main()
 {
@@ -10,6 +11,12 @@ int main()
     while (19)
     {
         std::cin >> input;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        if (std::cin.eof())
+        {
+            std::cout << std::endl;
+            break;
+        }
         if (input == "EXIT")
             return(0);
         else if (input == "ADD")

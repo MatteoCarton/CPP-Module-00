@@ -1,11 +1,5 @@
 #include "Contact.hpp"
 
-/*
-Les :: c'est pour dire "cette fonction fait partie de cette classe"
-    NomDeLaClasse::nomDeLaFonction(...)
-    std::string
-*/
-
 void Contact::setFirstName(std::string name) {
     this->firstName = name;
 }

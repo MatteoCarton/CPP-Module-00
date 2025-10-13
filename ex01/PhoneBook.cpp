@@ -31,7 +31,7 @@ void PhoneBook::add(void)
 {
 	std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
 
-	std::cout << "Add your contact to the phonebook :" << std::endl;
+	std::cout << "Add your contact to the phonebook :\n";
 	std::cout << "First name : ";
 	std::getline(std::cin, firstName);
 	std::cout << "Last name : ";
@@ -44,7 +44,7 @@ void PhoneBook::add(void)
 	std::getline(std::cin, darkestSecret);
 	if (firstName.empty() || lastName.empty() || nickname.empty() || phoneNumber.empty() || darkestSecret.empty())
 	{
-		std::cout << "Error: All fields must be filled!" << std::endl;
+		std::cout << "Error: All fields must be filled!\n";
 		return;
 	}
 	this->contact[this->index].setFirstName(firstName);
@@ -54,7 +54,7 @@ void PhoneBook::add(void)
 	this->contact[this->index].setDarkestSecret(darkestSecret);
 	this->index = increaseIndex(this->index);
 	this->numberOfContact = increaseNumberOfContact(this->numberOfContact);
-    std::cout << "Contact added !" << std::endl;
+    std::cout << "Contact added !\n";
 }
 
 static std::string truncatedText(std::string text)
@@ -73,11 +73,11 @@ void PhoneBook::search(void)
     int indexToSearch;
     int choice;
 
-    std::cout << "     index|first name| last name|  nickname" << std::endl;
+    std::cout << "     index|first name| last name|  nickname\n";
 
     if (this->numberOfContact == 0)
     {
-        std::cout << "Phonebook is empty! Add contacts first." << std::endl;
+        std::cout << "Phonebook is empty! Add contacts first.\n";
         return;
     }
 

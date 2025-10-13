@@ -11,8 +11,8 @@ class Contact {
         std::string phoneNumber;
         std::string darkestSecret;
     public:
-        void setFirstName(std::string name); // set = modifier (prend un parametre)
-        std::string getFirstName(void); // get = recuperer (retourne une string, pas de parametre)
+        void setFirstName(std::string name);
+        std::string getFirstName(void);
         void setLastName(std::string name);
         std::string getLastName(void);
         void setNickname(std::string name);

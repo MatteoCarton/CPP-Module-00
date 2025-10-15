@@ -6,7 +6,7 @@
 /*   By: mcarton <mcarton@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 12:28:45 by mcarton           #+#    #+#             */
-/*   Updated: 2025/10/15 12:52:43 by mcarton          ###   ########.fr       */
+/*   Updated: 2025/10/15 15:07:21 by mcarton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ void PhoneBook::add(void)
 {
 	std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
 
-	std::cout << CYAN << "\n┌─────────────────────────────────┐\n";
-	std::cout << "│     ➕  ADD NEW CONTACT  ➕     │\n";
-	std::cout << "└─────────────────────────────────┘" << RESET << "\n\n";
+	std::cout   << CYAN << "\n┌─────────────────────────────────┐\n"
+	            << "│     ➕  ADD NEW CONTACT  ➕     │\n"
+	            << "└─────────────────────────────────┘" << RESET << "\n\n";
 
 	std::cout << YELLOW << "📝 First name: " << RESET;
 	std::getline(std::cin, firstName);
@@ -103,9 +103,9 @@ void PhoneBook::search(void)
     int indexToSearch;
     int choice;
 
-    std::cout << BLUE << "\n┌──────────────────────────────────┐\n";
-    std::cout << "│     🔍  SEARCH CONTACTS  🔍      │\n";
-    std::cout << "└──────────────────────────────────┘" << RESET << "\n\n";
+    std::cout   << BLUE << "\n┌──────────────────────────────────┐\n"
+                << "│     🔍  SEARCH CONTACTS  🔍      │\n"
+                << "└──────────────────────────────────┘" << RESET << "\n\n";
 
     if (this->numberOfContact == 0)
     {
@@ -113,21 +113,21 @@ void PhoneBook::search(void)
         return;
     }
 
-    std::cout << BOLD << CYAN;
-    std::cout << "┌──────────┬──────────┬──────────┬──────────┐\n";
-    std::cout << "│" << std::setw(10) << "INDEX" << "│";
-    std::cout << std::setw(10) << "FIRST NAME" << "│";
-    std::cout << std::setw(10) << "LAST NAME" << "│";
-    std::cout << std::setw(10) << "NICKNAME" << "│\n";
-    std::cout << "├──────────┼──────────┼──────────┼──────────┤\n" << RESET;
+    std::cout   << BOLD << CYAN
+                << "┌──────────┬──────────┬──────────┬──────────┐\n"
+                << "│" << std::setw(10) << "INDEX" << "│"
+                << std::setw(10) << "FIRST NAME" << "│"
+                << std::setw(10) << "LAST NAME" << "│"
+                << std::setw(10) << "NICKNAME" << "│\n"
+                << "├──────────┼──────────┼──────────┼──────────┤\n" << RESET;
 
     i = 0;
     while (i < this->numberOfContact)
     {
-        std::cout << CYAN << "│" << RESET << std::setw(10) << i << CYAN << "│" << RESET;
-        std::cout << std::setw(10) << truncatedText(this->contact[i].getFirstName()) << CYAN << "│" << RESET;
-        std::cout << std::setw(10) << truncatedText(this->contact[i].getLastName()) << CYAN << "│" << RESET;
-        std::cout << std::setw(10) << truncatedText(this->contact[i].getNickname()) << CYAN << "│" << RESET << std::endl;
+        std::cout   << CYAN << "│" << RESET << std::setw(10) << i << CYAN << "│" << RESET
+                    << std::setw(10) << truncatedText(this->contact[i].getFirstName()) << CYAN << "│" << RESET
+                    << std::setw(10) << truncatedText(this->contact[i].getLastName()) << CYAN << "│" << RESET
+                    << std::setw(10) << truncatedText(this->contact[i].getNickname()) << CYAN << "│" << RESET << std::endl;
         i++;
     }
     std::cout << CYAN << "└──────────┴──────────┴──────────┴──────────┘" << RESET << "\n\n";
@@ -156,10 +156,10 @@ void PhoneBook::search(void)
             return (void)(std::cout << std::endl);
         while (choice != 1 && choice != 2)
         {
-            std::cout << RED << "\n❌ Wrong index!\n" << RESET;
-            std::cout << YELLOW << "1: " << RESET << "Try again\n";
-            std::cout << YELLOW << "2: " << RESET << "Go back to menu\n";
-            std::cout << MAGENTA << "Your choice: " << RESET;
+            std::cout   << RED << "\n❌ Wrong index!\n" << RESET
+                        << YELLOW << "1: " << RESET << "Try again\n"
+                        << YELLOW << "2: " << RESET << "Go back to menu\n"
+                        << MAGENTA << "Your choice: " << RESET;
             std::cin >> choice;
             if (std::cin.eof())
                 return (void)(std::cout << std::endl);
@@ -175,12 +175,12 @@ void PhoneBook::search(void)
         choice = -1;
     }
 
-    std::cout << GREEN << "\n╔════════════════════════════════════════╗\n";
-    std::cout << "║        CONTACT DETAILS                 ║\n";
-    std::cout << "╚════════════════════════════════════════╝" << RESET << "\n\n";
-    std::cout << CYAN << "👤 First name:     " << RESET << this->contact[indexToSearch].getFirstName() << std::endl;
-    std::cout << CYAN << "👤 Last name:      " << RESET << this->contact[indexToSearch].getLastName() << std::endl;
-    std::cout << CYAN << "🏷️  Nickname:       " << RESET << this->contact[indexToSearch].getNickname() << std::endl;
-    std::cout << CYAN << "📞 Phone number:   " << RESET << this->contact[indexToSearch].getPhoneNumber() << std::endl;
-    std::cout << CYAN << "🤫 Darkest secret: " << RESET << this->contact[indexToSearch].getDarkestSecret() << std::endl;
+    std::cout   << GREEN << "\n╔════════════════════════════════════════╗\n"
+                << "║        CONTACT DETAILS                 ║\n"
+                << "╚════════════════════════════════════════╝" << RESET << "\n\n"
+                << CYAN << "👤 First name:     " << RESET << this->contact[indexToSearch].getFirstName() << std::endl
+                << CYAN << "👤 Last name:      " << RESET << this->contact[indexToSearch].getLastName() << std::endl
+                << CYAN << "🏷️  Nickname:       " << RESET << this->contact[indexToSearch].getNickname() << std::endl
+                << CYAN << "📞 Phone number:   " << RESET << this->contact[indexToSearch].getPhoneNumber() << std::endl
+                << CYAN << "🤫 Darkest secret: " << RESET << this->contact[indexToSearch].getDarkestSecret() << std::endl;
 }

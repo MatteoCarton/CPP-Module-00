@@ -6,7 +6,7 @@
 /*   By: mcarton <mcarton@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 12:28:47 by mcarton           #+#    #+#             */
-/*   Updated: 2025/10/15 12:54:30 by mcarton          ###   ########.fr       */
+/*   Updated: 2025/10/15 14:55:32 by mcarton          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@
 # define MAGENTA "\033[35m"
 # define CYAN    "\033[36m"
 # define BOLD    "\033[1m"
-
-
 
 class PhoneBook {
     private:

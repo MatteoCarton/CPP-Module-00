@@ -1,0 +1,48 @@
+ADD
+John
+Doe
+Johnny
+555-0001
+Loves pizza
+ADD
+Jane
+Smith
+Janie
+555-0002
+Afraid of spiders
+ADD
+Bob
+Wilson
+Bobby
+555-0003
+Secret agent
+ADD
+Alice
+Brown
+Ally
+555-0004
+Chocolate addict
+ADD
+Charlie
+Davis
+Chuck
+555-0005
+Night owl
+ADD
+Diana
+Miller
+Di
+555-0006
+Coffee lover
+ADD
+Eve
+Garcia
+Evie
+555-0007
+Cat person
+ADD
+Frank
+Martinez
+Frankie
+555-0008
+Dog person
